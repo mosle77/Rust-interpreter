@@ -15,8 +15,42 @@ You need to have Rust programming language installed on your machine. Follow the
 Clone this repository to your local machine:
 
 ```shell
-$ git clone https://github.com/mosle77/Rust-interpreter.git
+git clone https://github.com/mosle77/Rust-interpreter.git
 ```
 
 Change into the project directory:
+
+```shell
+cd Rust-interpreter
+```
+
+Build the project using `cargo build` command:
+```shell
+cargo build
+```
+
+## Running the tests
+
+Run the tests using `cargo test` command:
+
+```shell
+cargo test
+```
+
+## Usage
+```shell
+cargo run
+```
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/<your-username>/interpreter-in-rust/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/<your-username>/interpreter-in-rust/blob/master/LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by [Writing an Interpreter in Go](https://interpreterbook.com/) by Thorsten Ball.
 
