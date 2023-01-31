@@ -14,7 +14,9 @@ You need to have Rust programming language installed on your machine. Follow the
 
 Clone this repository to your local machine:
 
+```shell
 $ git clone https://github.com/mosle77/Rust-interpreter.git
+```
 
 Change into the project directory:
 
