@@ -42,13 +42,10 @@ cargo test
 cargo run
 ```
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://github.com/<your-username>/interpreter-in-rust/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/<your-username>/interpreter-in-rust/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mosle77/Rust-interpreter/LICENSE) file for details.
 
 ## Acknowledgments
 
