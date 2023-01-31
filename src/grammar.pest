@@ -1,0 +1,64 @@
+// see https://pest.rs/book/ and https://pest.rs/book/examples/calculator.html
+
+integer = @{ ASCII_DIGIT+ }
+
+// WHITE SPACES
+WHITESPACE = _{ " " }
+
+// KEYWORDS
+LET = _{ "let" }
+MUT = _{ "mut" }
+IF = _{ "if" }
+ELSE = _{ "else" }
+WHILE = _{ "while" }
+TRUE = {"true"}
+FALSE = {"false"}
+keyword = { LET | MUT | IF | ELSE | WHILE | TRUE | FALSE }
+
+// IDENTIFIERS
+identifier = @{ !keyword ~ ASCII_ALPHA ~ ASCII_ALPHANUMERIC* }
+
+// OPERATORS
+ADD = { "+" }
+SUBTRACT = { "-" }
+MULTIPLY = { "*" }
+DIVIDE = { "/" }
+MODULO = { "%" }
+EQQUALS = @{ "==" }
+EQUALS = _{ "=" }
+LEQ = @{ "<=" }
+GEQ = @{ ">=" }
+LOWER = { "<" }
+GREATER = { ">" }
+bin_op = _{ ADD | SUBTRACT | MULTIPLY | DIVIDE | MODULO | EQQUALS | LEQ | GEQ | LOWER | GREATER }
+
+// DELIMITERS
+LPAR = _{ "(" }
+RPAR = _{ ")" }
+LCURL = _{ "{" }
+RCURL = _{ "}" }
+SEMICOLON = _{ ";" } 
+
+// EXPRESSIONS
+atom = _{ 
+  integer 
+| identifier 
+| TRUE 
+| FALSE 
+| LPAR ~ expr ~ RPAR 
+}
+expr = { atom ~ (bin_op ~ atom)* }
+
+
+// INSTRUCTIONS
+let_equals = { LET ~ identifier ~ EQUALS ~ expr }
+let_mut_equals = { LET ~ MUT ~ identifier ~ EQUALS ~ expr}
+while_instr = { WHILE ~ expr ~ instrs}
+if_instr = {IF ~ expr ~ instrs ~ ELSE ~ instrs}
+mutate_instr = {identifier ~ EQUALS ~ expr }
+instrs = { empty_block | non_empty_block }
+empty_block = { LCURL ~ RCURL }
+non_empty_block = { LCURL ~ instr ~ (SEMICOLON ~ instr)* ~ RCURL }
+instr = { mutate_instr | expr | let_equals | let_mut_equals | instrs | if_instr | while_instr }
+
+start_rule = _{ SOI ~ instr ~ EOI }
