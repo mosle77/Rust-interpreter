@@ -45,7 +45,7 @@ cargo run
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/mosle77/Rust-interpreter/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mosle77/Rust-interpreter/blob/main/LICENSE) file for details.
 
 ## Acknowledgments
 
